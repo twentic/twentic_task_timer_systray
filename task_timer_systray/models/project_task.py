@@ -17,15 +17,11 @@ class ProjectTask(models.Model):
         user = self.env.user
 
         # 1. Timers actius de l'usuari actual sobre project.task
-        # Since Odoo 19, project.task uses timer.parent.mixin: the real
-        # timer.timer lives on the linked account.analytic.line (today's
-        # timesheet draft), not directly on project.task, and is only
-        # linked back via parent_res_model/parent_res_id.
         active_timers = self.env['timer.timer'].search([
             ('user_id', '=', user.id),
-            ('parent_res_model', '=', 'project.task'),
+            ('res_model', '=', 'project.task'),
         ])
-        timer_by_task = {t.parent_res_id: t for t in active_timers}
+        timer_by_task = {t.res_id: t for t in active_timers}
         active_task_ids = list(timer_by_task.keys())
 
         # 2. Tasques amb timesheet avui — read_group evita carregar registres complets
