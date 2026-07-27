@@ -11,10 +11,11 @@
     ],
     'license': 'LGPL-3',
     'data': [],
+    'images': ['static/description/main_screenshot.png'],
     'assets': {
         'web.assets_backend': [
             'task_timer_systray/static/src/task_timer_systray.js',
-            'ask_timer_systray/static/src/task_timer_systray.xml',
+            'task_timer_systray/static/src/task_timer_systray.xml',
             'task_timer_systray/static/src/task_timer_systray.scss',
         ],
         'web.assets_web_dark': [
