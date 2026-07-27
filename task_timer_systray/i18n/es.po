@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tw_task_timer_systray
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20251208\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-05 13:25+0000\n"
+"PO-Revision-Date: 2026-05-05 13:25+0000\n"
+"Last-Translator: TwenTIC <info@twentic.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Completed today"
+msgstr "Completada hoy"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "No tasks started today"
+msgstr "No hay tareas iniciadas hoy"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Pause"
+msgstr "Pausar"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Paused"
+msgstr "Pausada"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_sistray.js:0
+msgid "Resume"
+msgstr "Reanudar"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Running"
+msgstr "En curso"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Start"
+msgstr "Iniciar"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Stop"
+msgstr "Detener"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Switch active task"
+msgstr "Cambiar tarea activa"
+
+#. module: tw_task_timer_systray
+#: model:ir.model,name:tw_task_timer_systray.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Task \"%s\" will be paused and \"%s\" will start. Do you want to continue?"
+msgstr "La tarea \"%s\" se pausará y se iniciará \"%s\". ¿Deseas continuar?"
+
+#. module: tw_task_timer_systray
+#. odoo-javascript
+#: code:addons/tw_task_timer_systray/static/src/task_timer_systray.js:0
+msgid "Today's tasks"
+msgstr "Tareas de hoy"

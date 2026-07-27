@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="tw_task_timer_systray.TaskTimerSystray">
+        <!-- Systray button: clock icon + badge with number of running tasks -->
+        <div class="o_menu_systray_item tw_task_timer_systray_btn d-flex align-items-center px-2"
+             t-on-click="toggleDropdown"
+             t-att-title="labels.todaysTasks">
+            <i class="fa fa-hourglass-half"/>
+            <t t-if="runningCount > 0">
+                <span class="tw_task_timer_badge badge rounded-pill ms-1">
+                    <t t-esc="runningCount"/>
+                </span>
+            </t>
+        </div>
+
+        <!-- Dropdown panel -->
+        <div t-if="state.isOpen"
+             class="tw_task_timer_dropdown"
+             t-on-click.stop="">
+
+            <!-- Header -->
+            <div class="tw_task_timer_header">
+                <i class="fa fa-hourglass-half me-2"/>
+                <t t-out="labels.todaysTasks"/>
+                <span t-if="state.loading" class="ms-2">
+                    <i class="fa fa-spinner fa-spin"/>
+                </span>
+            </div>
+
+            <!-- Empty state -->
+            <t t-if="state.tasks.length === 0">
+                <div class="tw_task_timer_empty">
+                    <i class="fa fa-inbox me-2"/>
+                    <t t-out="labels.noTasksToday"/>
+                </div>
+            </t>
+
+            <!-- Task list -->
+            <t t-foreach="state.tasks" t-as="task" t-key="task.id">
+                <div class="tw_task_timer_item">
+
+                    <!-- Task info -->
+                    <div class="tw_task_timer_info" t-on-click="(ev) => this.openTask(task, ev)">
+                        <div class="tw_task_timer_name" t-esc="task.name"/>
+                        <div class="tw_task_timer_project" t-esc="task.project_name"/>
+                        <div class="tw_task_timer_time">
+                            <!-- State: running -->
+                            <t t-if="task.timer_state === 'running'">
+                                <span class="tw_state_running">
+                                    <i class="fa fa-circle me-1"/>
+                                    <t t-out="labels.running"/> —
+                                </span>
+                                <span class="tw_elapsed font-monospace">
+                                    <t t-esc="this.elapsedTime(task)"/>
+                                </span>
+                            </t>
+                            <!-- State: paused -->
+                            <t t-elif="task.timer_state === 'paused'">
+                                <span class="tw_state_paused">
+                                    <i class="fa fa-pause-circle me-1"/>
+                                    <t t-out="labels.paused"/> —
+                                </span>
+                                <span class="tw_elapsed font-monospace">
+                                    <t t-esc="this.elapsedTime(task)"/>
+                                </span>
+                            </t>
+                            <!-- State: stopped -->
+                            <t t-else="">
+                                <span class="tw_state_stopped">
+                                    <i class="fa fa-stop-circle me-1"/>
+                                    <t t-out="labels.completedToday"/>
+                                </span>
+                            </t>
+                        </div>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="tw_task_timer_actions">
+
+                        <!-- RUNNING → Pause + Stop -->
+                        <t t-if="task.timer_state === 'running'">
+                            <button class="btn btn-sm tw_btn_pause"
+                                    t-on-click="(ev) => this.onPause(task, ev)"
+                                    t-att-title="labels.pause">
+                                <i class="fa fa-pause"/>
+                            </button>
+                            <button class="btn btn-sm tw_btn_stop"
+                                    t-on-click="(ev) => this.onStop(task, ev)"
+                                    t-att-title="labels.stop">
+                                <i class="fa fa-stop"/>
+                            </button>
+                        </t>
+
+                        <!-- PAUSED → Resume + Stop -->
+                        <t t-elif="task.timer_state === 'paused'">
+                            <button class="btn btn-sm tw_btn_start"
+                                    t-on-click="(ev) => this.onStart(task, ev)"
+                                    t-att-title="labels.resume">
+                                <i class="fa fa-play"/>
+                            </button>
+                            <button class="btn btn-sm tw_btn_stop"
+                                    t-on-click="(ev) => this.onStop(task, ev)"
+                                    t-att-title="labels.stop">
+                                <i class="fa fa-stop"/>
+                            </button>
+                        </t>
+
+                        <!-- STOPPED → Start -->
+                        <t t-else="">
+                            <button class="btn btn-sm tw_btn_start"
+                                    t-on-click="(ev) => this.onStart(task, ev)"
+                                    t-att-title="labels.start">
+                                <i class="fa fa-play"/>
+                            </button>
+                        </t>
+
+                    </div>
+                </div>
+            </t>
+
+        </div>
+    </t>
+
+</templates>

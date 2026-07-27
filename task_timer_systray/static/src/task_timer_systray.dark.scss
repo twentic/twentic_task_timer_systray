@@ -1,0 +1,84 @@
+// ─── Task Timer Systray — Dark mode overrides ────────────────────────────────
+// Aquest fitxer es carrega NOMÉS en mode fosc (web.assets_web_dark).
+// Els estils apliquen directament sense necessitat de selector addicional.
+
+.tw_task_timer_systray_btn {
+    color: rgba(255, 255, 255, 0.75);
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.tw_task_timer_dropdown {
+    background: #1e2228;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tw_task_timer_header {
+    background: #2a3038;
+    color: #ced4da;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.tw_task_timer_empty {
+    color: #8a9099;
+}
+
+.tw_task_timer_item {
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+
+    &:hover {
+        background-color: #2a3038;
+    }
+}
+
+.tw_task_timer_name {
+    color: #e9ecef;
+}
+
+.tw_task_timer_project {
+    color: #8a9099;
+}
+
+.tw_state_stopped {
+    color: #8a9099;
+}
+
+.tw_elapsed {
+    color: #ced4da;
+}
+
+.tw_btn_start {
+    color: #4ade80;
+    border-color: #4ade80;
+
+    &:hover {
+        background-color: #198754;
+        border-color: #198754;
+        color: #fff;
+    }
+}
+
+.tw_btn_pause {
+    color: #ffb347;
+    border-color: #ffb347;
+
+    &:hover {
+        background-color: #fd7e14;
+        border-color: #fd7e14;
+        color: #fff;
+    }
+}
+
+.tw_btn_stop {
+    color: #f87171;
+    border-color: #f87171;
+
+    &:hover {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: #fff;
+    }
+}
